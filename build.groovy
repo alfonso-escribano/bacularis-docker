@@ -125,8 +125,9 @@ def buildDockerImages(String package_version) {
 def buildDockerImage(String package_name, String package_version, String os_variant) {
 	docker.withRegistry("${REGISTRY_URL}") {
 		def image_name = getImageName(package_name, package_version, os_variant)
-		def customImage = docker.build(image_name)
-		customImage.push()
+		//def customImage = docker.build(image_name)
+		//customImage.push()
+		docker build -t bacularis/bacularis-web ./web".execute().waitForProcessOutput(System.out, System.err)
 	}
 }
 
