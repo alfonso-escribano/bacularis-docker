@@ -2,17 +2,17 @@ FROM debian:trixie-slim
 
 LABEL maintainer="Alfonso Escribano <alfonso.escribano@meteologica.com>"
 
-ENV BACULARIS_VERSION=6.0.0
+ENV BACULARIS_VERSION=6.3.0
 ENV PACKAGE_NAME=standalone
 ENV PHP_VERSION=8.4
 ENV WEB_USER=bacula
 
-#RUN groupadd -g 26 tape; \
-#	groupadd -g 124 bacula; \
-#	useradd -r -d /var/lib/bacula -s /usr/sbin/nologin -g bacula -G tape -u 117 bacula
-RUN groupadd -g 30 tape; \
-	groupadd -g 133 bacula; \
-	useradd -r -d /var/lib/bacula -s /sbin/nologin -g bacula -G tape -u 133 bacula
+RUN groupadd -g 26 tape; \
+	groupadd -g 124 bacula; \
+	useradd -r -d /var/lib/bacula -s /usr/sbin/nologin -g bacula -G tape -u 117 bacula
+#RUN groupadd -g 30 tape; \
+#	groupadd -g 133 bacula; \
+#	useradd -r -d /var/lib/bacula -s /sbin/nologin -g bacula -G tape -u 133 bacula
 
 RUN apt update && \
 	apt -y install --no-install-recommends bacula-common && \
