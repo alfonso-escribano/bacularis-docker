@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export NAME="bacularis"
-export BACULARIS_VERSION="6.3.0"
+export BACULARIS_VERSION="6.4.0"
 wget https://github.com/bacularis/bacularis-app/archive/refs/tags/${BACULARIS_VERSION}.tar.gz -O bacularis-app-${BACULARIS_VERSION}.tar.gz
 wget https://github.com/bacularis/bacularis-common/archive/refs/tags/${BACULARIS_VERSION}.tar.gz -O bacularis-common-${BACULARIS_VERSION}.tar.gz
 wget https://github.com/bacularis/bacularis-api/archive/refs/tags/${BACULARIS_VERSION}.tar.gz -O bacularis-api-${BACULARIS_VERSION}.tar.gz
@@ -29,4 +29,8 @@ ln -sf "vendor/${NAME}/${NAME}-web/Web" "${NAME}/protected/"
 cp "${NAME}/protected/vendor/npm-asset/fortawesome--fontawesome-free/css/all.min.css" "${NAME}/htdocs/themes/Baculum-v2/fonts/css/fontawesome-all.min.css"
 cp -r "${NAME}/protected/vendor/npm-asset/fortawesome--fontawesome-free/webfonts/"* "${NAME}/htdocs/themes/Baculum-v2/fonts/webfonts/"
 cp -r "${NAME}/protected/vendor/npm-asset/fontsource--inter/files/"* "${NAME}/htdocs/themes/Baculum-v2/fonts/webfonts/"
+
+
+docker build -t meteologica/bacularis-standalone:${BACULARIS_VERSION} .
+docker image save meteologica/bacularis-standalone:${BACULARIS_VERSION} -o bacularis-meteo-${BACULARIS_VERSION}.tar.gz
 
