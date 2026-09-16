@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export NAME="bacularis"
-export BACULARIS_VERSION="6.4.0"
+export BACULARIS_VERSION="6.5.2"
 wget https://github.com/bacularis/bacularis-app/archive/refs/tags/${BACULARIS_VERSION}.tar.gz -O bacularis-app-${BACULARIS_VERSION}.tar.gz
 wget https://github.com/bacularis/bacularis-common/archive/refs/tags/${BACULARIS_VERSION}.tar.gz -O bacularis-common-${BACULARIS_VERSION}.tar.gz
 wget https://github.com/bacularis/bacularis-api/archive/refs/tags/${BACULARIS_VERSION}.tar.gz -O bacularis-api-${BACULARIS_VERSION}.tar.gz
